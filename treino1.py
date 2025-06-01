@@ -1,11 +1,22 @@
-texto = 'fim do programa'
 
-novo_texto = ''
+while True:
+    palavra = input('Digite uma palavra qualquer: ')
+    palavra_invertida = palavra[::-1]
 
-for letra in texto:
-    novo_texto += f'*{letra}'
-    print(letra)
-print(novo_texto)
+    print(palavra_invertida)
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
     
 
     

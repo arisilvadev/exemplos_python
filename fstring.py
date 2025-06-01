@@ -1,4 +1,4 @@
-teste = 'Ari ari'
+# teste = 'Ari ari'
 # # print(teste.capitalize())#capitalize: põe a primeira letra em maiúscula
 # # print(teste.upper())#upper: põe o conteúdo da variável todo em maiuscula
 # # print(teste.casefold())#casefold: põe o conteúdo da variável todo em minúscula
@@ -38,3 +38,75 @@ teste = 'Ari ari'
 #     novo_texto += f'*{letra}'
 #     print(letra)
 # print(novo_texto)
+
+#import random = random.randint(1,60) para retornar um número inteiro aleatório entre 1 e 100
+
+# #função RANGE (start, stop, step) ou (onde começa, onde termina e intervalos)
+# numeros = range(0,11, 1)
+
+# for numero in numeros:#lê-se: para cada NUMERO em NÚMEROS faça:
+#     print(numero, end=' * ')#end altera o valor padrão do end(\n) que é quebra de linha
+
+# import random #usado para sortear algo
+# import string #usado para sortear algo do objeto string
+
+# letra = random.choice(string.ascii_uppercase) #string.ascii usa o alfabeto de a à z
+#                                             #uppercase = maiúsculas e lowercase = minúsculas
+# print("Letra sorteada:", letra)
+
+
+# for i in range(1,11):
+#     if i %2==0:
+#         print(f'{i} é par!') #para exibir apenas os números pares da sequência
+
+#PARA GARANTIR APENAS LETRAS E ESPAÇOS:
+# while not all(parte.isalpha() for parte in aluno.split()):#parte.isalpha garante apenas letras 
+#                                                         #.split garante letras com espaços
+#         print("Entrada inválida! Digite apenas letras, sem números ou símbolos.")
+#         aluno = input("Tente novamente: ")
+
+
+#EXEMPLO ANINHAMENTO DE FOR:
+# for i in range(1,6):
+#     for j in range(1,6):
+#         if (i + j) % 2==0:
+#             print(f'{i} + {j} é PAR!')
+#         else:
+#             print(f'{i} + {j} é ÍMPAR!')
+
+#manipulação de strings
+
+# frase = input("Digite uma frase: ")
+
+# print("Maiúsculas:", frase.upper())
+# print("Minúsculas:", frase.lower())
+# print("Capitalizado:", frase.title())
+
+#função SUM para somar os itens de uma lista, tupla, etc (APENAS NÚMEROS)
+# gastos_joao = [300, 500, 200, 800]
+# gastos_pedro = [200, 400, 500, 700]
+
+# total_joao = sum(gastos_joao)
+# total_pedro = sum(gastos_pedro)
+# print(total_pedro)
+# print(total_joao)
+
+#DETERMINAR MAIOR NÚMERO EM UM INTERVALO
+# Em Python, float('-inf') representa o valor menos infinito, 
+# ou seja, o menor número possível que pode ser representado com ponto flutuante.
+
+# 💡 Por que usar isso como valor inicial ao procurar o maior número?
+# Porque garante que qualquer número digitado pelo usuário será maior do que esse valor.
+
+# Assim, na primeira comparação, o número do usuário sempre "vence" e atualiza a variável maior.
+
+# maior = float('-inf')  # Começa com o menor valor possível
+
+# for i in range(5):
+#     numero = float(input(f"Digite o {i + 1}º número: "))
+    
+#     if numero > maior:
+#         maior = numero
+
+# print(f"\nO maior número digitado foi: {maior}")
+

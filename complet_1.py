@@ -495,8 +495,73 @@
 #         print(f'Senha digitada corretamente! Seja bem vindo ao sistema!')
 #         break
 
+#  DESAFIO 05
+# Desenvolva um jogo de adivinhação onde o
+# programa escolhe um número aleatório entre 1 e
+# 100. O usuário deve tentar adivinhar o número, e
+# o programa deve fornecer dicas se o palpite está
+# muito alto ou baixo.
 
-        
-        
+# import random
+# import os
 
+# numero_aleatorio = random.randint(1, 100)
+# tentativa = 0
+# palpite = None
+# fim = 'Fim do jogo!'
+# titulo = '🍀 Jogo da adivinhação 🍀'
+
+# while palpite != numero_aleatorio:
+#     try:
+   
+#         print(f'{titulo:^40}')
+#         palpite = int(input('🤔 tente adivinhar o número sorteado: '))
+#         tentativa += 1
+#         # if tentativa > 3:
+#         #     print('Você excedeu o número de tentativas!')
+#         #     print(fim)
+#         #     break
+        
+#         if palpite < numero_aleatorio:
+#             print('😡 O número digitado está ABAIXO do número sorteado!')
+#             input('Digite "enter" para tentar outra novamente!')
+#             os.system('cls')
+#         elif palpite > numero_aleatorio:
+#             print('😡 O número digitado está ACIMA do número sorteado! Tente novamente!')
+#             input('Digite "enter" para tentar novamente!')
+#             os.system('cls')
+#         else:
+#             print(f'✅️ Parabéns! Você acertou o número sorteado em {tentativa} tentativas!')
+#     except:
+#         print('Por favor, digite apenas números inteiros!')
+#         input('Digite "enter" para continuar!')
+#         os.system('cls')
+
+     
+# print(f'{fim:=^40}')
+        
+  #adivinhe o número      
+# [LPIA-A03] Você está criando um programa em Python para simular um jogo simples de adivinhação. 
+# O programa deve ter um número fixo, por exemplo, 7, que o jogador deve adivinhar. 
+# O jogador terá até 3 tentativas para acertar o número.
+
+# Implemente o jogo utilizando um loop while para permitir que o jogador faça 
+# múltiplas tentativas até acertar ou atingir o limite de tentativas. 
+# Utilize a estrutura else para exibir uma mensagem de encorajamento 
+# caso o jogador acerte e uma mensagem de consolo caso as 3 tentativas se esgotem sem sucesso.
+
+import random
+numero_adivinhe = random.randint(1,10)
+tentativas = 0
+limite_tentativas = 3
+
+while tentativas < limite_tentativas:
+    palpite = int(input("Tente adivinhar o número (entre 1 e 10): "))
+    tentativas += 1
+
+    if palpite == numero_adivinhe:
+        print(f'Parabéns! Você acertou o número em {tentativas} tentativas! O número secreto é {numero_adivinhe}')
+        break
+else:
+    print("Que pena! Suas tentativas acabaram. O número era", numero_adivinhe)
 
