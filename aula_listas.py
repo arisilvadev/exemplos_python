@@ -108,23 +108,84 @@
 # for equipe, media in classificacao:
 #     print(f"{equipe} - Média: {media:.2f}")
 
-resultados = [
-    ("Equipe A", [8, 9, 10]),
-    ("Equipe B", [6, 7, 5]),
-    ("Equipe C", [10, 10, 9])
-]
+# resultados = [
+#     ("Equipe A", [8, 9, 10]),
+#     ("Equipe B", [6, 7, 5]),
+#     ("Equipe C", [10, 10, 9])
+# ]
 
-classificacao = []  # lista vazia para armazenar (equipe, média)
+# classificacao = []  # lista vazia para armazenar (equipe, média)
 
-for equipe, pontos in resultados:
-    media = sum(pontos) / len(pontos)
-    classificacao.append((equipe, media))  # adiciona a tupla na lista
-    classificacao_ordenada = sorted(classificacao, key=lambda x: x[1], reverse=True)
+# for equipe, pontos in resultados:
+#     media = sum(pontos) / len(pontos)
+#     classificacao.append((equipe, media))  # adiciona a tupla na lista
+#     classificacao_ordenada = sorted(classificacao, key=lambda x: x[1], reverse=True)
 
-# Ordena a lista pela média em ordem decrescente
-classificacao.sort(key=lambda x: x[1], reverse=True)# key é um argumento que define com base em quê
-#lambda é usado quando não se tem uma função pronta como 'len', 'sum', etc
+# # Ordena a lista pela média em ordem decrescente
+# classificacao.sort(key=lambda x: x[1], reverse=True)# key é um argumento que define com base em quê
+# #lambda é usado quando não se tem uma função pronta como 'len', 'sum', etc
 
-# Exibe a classificação com for para ficar uma informação embaixo da outra
-for equipe, media in classificacao:
-    print(f'{equipe}: {media:.2f}')
+# # Exibe a classificação com for para ficar uma informação embaixo da outra
+# for equipe, media in classificacao:
+#     print(f'{equipe}: {media:.2f}')
+
+"""
+Exercício
+Exiba os índices da lista
+0 Maria
+1 Helena
+2 Luiz
+"""
+
+"""
+Exercício
+Exiba os índices da lista
+0 Maria
+1 Helena
+2 Luiz
+"""
+# lista = ['Maria', 'Helena', 'Luiz']
+# lista.append('João')
+# lista.sort()
+
+
+# indices = range(len(lista))#serve para exibir na tela os índices de cada ítem da lista
+
+# for indice in indices:
+#     print(indice, lista[indice], type(lista[indice]))
+
+#DESEMPACOTAMENTO DE LISTA
+
+# nomes = ['maria', 'joão', 'andré', 'ari']
+
+# # nome1, nome2, nome3, nome4 = nomes
+# # print(nome2)
+
+# #ou
+
+# nome1, *_ = nomes #_(underline) para criar uma variável que não vai ser utilizada
+# print(nome1)
+
+#OUTRO EXEMPLO:
+# nomes = ['maria', 'joão', 'andré', 'ari']
+# print(nomes)
+
+# nomes[3] = 'arnaldo'#substitui o valor do item em questão (índice 3)
+# print(nomes)
+
+# #USANDO ENUMERATE PARA BUSCAR ÍNDICES
+# nomes = ['maria', 'joão', 'andré', 'ari']
+# print(nomes)
+# nomes.append('chico')
+# print(nomes)
+# nomes.sort()
+
+# nomes_enumerados = list(enumerate(nomes))#transforma o iterável ENUMERATE em type list(lista)
+# print(nomes_enumerados)
+
+# for item in nomes_enumerados:
+#     print(item)
+
+
+
+

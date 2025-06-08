@@ -16,3 +16,4 @@
 # del lista [3]
 # print(lista)
 # lista.insert(0, 5)#insere o valor no indice 0 (não substituindo o valor 10 anterior)
+#lista.reverse() para inverter a exibição dos itens de uma lista
