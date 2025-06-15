@@ -213,5 +213,21 @@ erros de índices inexistentes na lista.
 
 #-------------------------------------------------------------------------
 
+lista1 = {
+    'Nome':'Ari',
+    'Idade':37,
+    'Cidade':'Recife'
+}
             
+print(lista1)
+lista1['País'] = 'Brasil' #adiciona uma chave e um valor ao dicionário
+print(lista1)
+lista1['Cidade'] = 'Olinda' #subcreve o valor da chave existente
+print(lista1)
+
+lista_tupla = tuple(lista1.items())
+print(lista_tupla)
+
+lista_lista = list(lista1.items())
+print(lista_lista)
 

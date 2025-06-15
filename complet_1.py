@@ -550,18 +550,136 @@
 # Utilize a estrutura else para exibir uma mensagem de encorajamento 
 # caso o jogador acerte e uma mensagem de consolo caso as 3 tentativas se esgotem sem sucesso.
 
-import random
-numero_adivinhe = random.randint(1,10)
-tentativas = 0
-limite_tentativas = 3
+# import random
+# numero_adivinhe = random.randint(1,10)
+# tentativas = 0
+# limite_tentativas = 3
 
-while tentativas < limite_tentativas:
-    palpite = int(input("Tente adivinhar o número (entre 1 e 10): "))
-    tentativas += 1
+# while tentativas < limite_tentativas:
+#     palpite = int(input("Tente adivinhar o número (entre 1 e 10): "))
+#     tentativas += 1
 
-    if palpite == numero_adivinhe:
-        print(f'Parabéns! Você acertou o número em {tentativas} tentativas! O número secreto é {numero_adivinhe}')
-        break
-else:
-    print("Que pena! Suas tentativas acabaram. O número era", numero_adivinhe)
+#     if palpite == numero_adivinhe:
+#         print(f'Parabéns! Você acertou o número em {tentativas} tentativas! O número secreto é {numero_adivinhe}')
+#         break
+# else:
+#     print("Que pena! Suas tentativas acabaram. O número era", numero_adivinhe)
 
+#uso do 'for' e range
+# import time
+# titulo = '🕒 Contagem regressiva para o ano novo 🕒'
+# numeros = range(10,0, -1)
+# final = '😉 Feliz ano novo! 😉'
+# print(titulo, '\n')
+# time.sleep(5)
+
+# for numero in numeros:
+#     print(f'Faltam  🕓 {numero} segundos para o fim do ano')
+#     time.sleep(1)
+# print(f'{final:=^40}')
+
+
+"""
+Faça um jogo para o usuário adivinhar qual
+a palavra secreta.
+- Você vai propor uma palavra secreta
+qualquer e vai dar a possibilidade para
+o usuário digitar apenas uma letra.
+- Quando o usuário digitar uma letra, você 
+vai conferir se a letra digitada está
+na palavra secreta.
+    - Se a letra digitada estiver na
+    palavra secreta; exiba a letra;
+    - Se a letra digitada não estiver
+    na palavra secreta; exiba *.
+Faça a contagem de tentativas do seu
+usuário.
+"""
+# import time
+# import os
+# palavra = 'segredo'
+# tentativas = 0
+# fim = '😎 Fim do jogo  😎'
+# inicio = ' 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 '
+     
+
+# while True:
+#     print(inicio)
+#     tentativas += 1
+#     letra = input('Digite uma letra da palavra secreta: ')
+    
+#     if letra in palavra:
+#         print(f'A letra digitada "{letra.upper()}" está na palavra secreta {palavra.upper()}!😁')
+#         print(f'✔️  Você acertou a letra após {tentativas} tentativas.✔️')
+#         print(f'{fim:=^40}')
+#         break
+        
+#     else:
+#         print('❌ A letra digitada não consta na palavra secreta. Tente outra vez!❌ ')
+#         time.sleep(3)
+#         os.system('cls')
+
+
+# Atividade 05:
+# Contagem de Números Positivos e Negativos:
+# Escreva um programa que solicite ao usuário 10 números e use um
+# laço for com uma condicional para contar quantos são positivos e
+# quantos são negativos.
+
+# positivos = 0
+# negativos = 0
+
+# for i in range(10):
+#     numero = float(input(f"Digite o {i + 1}º número: "))
+    
+#     if numero > 0:
+#         positivos += 1
+#     elif numero < 0:
+#         negativos += 1
+    
+
+# print(f"\nTotal de números positivos: {positivos}")
+# print(f"Total de números negativos: {negativos}")
+
+# Faça um programa que leia 5 números e informe a soma e a média dos números.
+
+# soma = 0
+# media = 0
+# fim = 'Programa finalizado! Até breve!'
+
+# while True:
+#     aluno = input('Digite o nome do aluno ou [s] para sair: ')
+#     if aluno == 's':
+#         print(f'{fim:=^40}')
+#         break
+#     for i in range (5):
+#         numero = int(input(f'Digite a {i+1}ª nota do aluno {aluno.upper()}: '))
+#         soma += numero
+#         media = soma / 5
+#     print(f'A média do aluno {aluno} é igual à: {media}')
+
+#COMO IMPRIMIR APENAS OS NÚMEROS ÍMPARES DE UM INTERVALO:
+# Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
+# for i in range(1, 50, 2):
+#     print(f'{i} é impar!')
+
+#COMO IMPRIMIR OS NÚMEROS ENTRE O INTERVALO INSERIDO PELO USUÁRIO:
+# primeiro_numero = int(input("Digite um numero: "))
+# segundo_numero = int(input("Digite um numero: "))
+# for i in range(primeiro_numero + 1, segundo_numero):
+#     print(i)
+
+#NOVO MODELO
+# nomes = ['ari', 'maria', 'chico']
+# vogais = 'aeiou'
+# total_vogais = 0
+# total_i = 0
+
+# for nome in nomes:
+#     for letra in nome:
+#         if letra in vogais:
+#             total_vogais += 1
+#             if letra == 'i':
+#                 total_i += 1
+# print(f'O total de vogais é igual à: {total_vogais}')
+# print(f'O total de vogais i é igual à: {total_i}')

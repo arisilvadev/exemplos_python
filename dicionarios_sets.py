@@ -236,11 +236,11 @@
 
 # %% OPERAÇÕES DENTRO DO DICIONÁRIO:
 
-dicionario = {
-    'nome':'ari',
-    'cidade':'recife',
-    'idade':'37'
-}
+# dicionario = {
+#     'nome':'ari',
+#     'cidade':'recife',
+#     'idade':'37'
+# }
 # print(list(dicionario))#retorna uma lista com todas as chaves do dicionário
 # print(len(dicionario))#retorna o número de itens do dicionário
 # print(dicionario['idade'])#retorna o valor da chave especificada
@@ -252,7 +252,332 @@ dicionario = {
 #     print(f'A chave "nome" se encontra no dicionário!')
 # if 'região' not in dicionario:
 #     print('A chave "região" NÃO se encontra no dicionário!')
-print(list(iter(dicionario)))# tem o mesmo resultado de chave.keys
+# print(list(iter(dicionario)))# tem o mesmo resultado de chave.keys
 
 
-# %%
+# %% ATIVIDADE PRÁTICA 10:
+# Desenvolva um programa que recebe um dicionário, uma
+# chave e um valor como entrada e adiciona a chave e o
+# valor ao dicionário, atualizando o valor se a chave já existir.
+
+ 
+# dicionario = {}#criando um dicionário vazio 
+
+# while True:
+   
+#     chave = input('Digite a chave que deseja adicionar ou [s] para sair: ')
+#     if chave == 's':#estrutura condicional de parada
+#         break
+#     valor = input('Digite o valor que deseja adicionar ou [s] para sair: ')
+#     if valor == 's':
+#         break
+    
+#     dicionario[chave] = valor #subscreve ou adiciona uma chave e um valor
+#     print(dicionario, end='\n\n')
+
+# %% ATIVIDADE PRÁTICA 11
+# Escreva um programa que recebe um dicionário e uma
+# lista de chaves como entrada e verifica se todas as
+# chaves da lista existem no dicionário. A função deve
+# retornar True se todas as chaves existirem e False caso contrário.
+
+# dicionario = {
+#     'Nome':'Ari',
+#     'Idade': '37',
+#     'Cidade':'Recife',
+#     'País':'Brasil'
+# }
+
+# chaves = ['Nome', 'Idade', 'Cidade', 'País', 'Religião']
+
+
+# resultado = all(chave in dicionario for chave in chaves)#função all retorna True se todos os testes
+#                                                         #forem verdadeiros.
+# print(resultado)
+
+#OU USANDO FUNÇÃO: 
+
+def verifica_chaves(dicionario, chaves):
+    for chave in chaves:
+        if chave not in dicionario:
+            return False
+    return True
+
+dicionario = {
+'nome':'ari',
+'idade':37,
+'cidade':'recife'
+}
+
+chaves = ['nome', 'idade', 'cidade']
+
+resultado = verifica_chaves(dicionario, chaves)
+print(resultado)
+#-------------------------------------------------------------------------
+# %% ATIVIDADE PRÁTICA 12
+#Crie um programa que simule um sistema de votação. O
+# programa deve permitir que os eleitores escolham entre
+# opções de CANDIDATOS e conte os votos para cada opção.
+# Use um dicionário para armazenar os resultados da
+# votação, onde as chaves são as opções e os valores são o
+# número de votos para cada opção. O programa deve
+# permitir que os eleitores votem, encerre a votação e exiba
+# os resultados finais. Use While True e pare o programa
+# somente se o usuário digitar o número 0 e exiba os
+# resultados finais.
+
+#EXEMPLO 01-----------
+# votacao = {
+#     'Ari': 0,
+#     'Chico': 0,
+#     'Maria': 0
+# }
+# votos = (0)
+# votos1 = (0)
+# votos2 = (0)
+# votos3 = (0)
+# canditato01 = (0)
+# canditato02 = (0)
+# canditato03 = (0)
+
+
+# while True:
+#     opcao = input('Escolha entre os candidatos [1] Ari, [2] Chico, [3] Maria, ou [0] para sair: \n')
+#     if opcao == '0':
+#         print('Contagem geral de votos: ')
+#         print(f'O candidato Ari teve {canditato01} votos.')
+#         print(f'O candidato Chico teve {canditato02} votos.')
+#         print(f'O candidato Maria teve {canditato03} votos.')
+#         print(f'Quantidade total de votos: {votos}')
+#         print(votacao)
+        
+#         if canditato01 > canditato02 and canditato03:
+#             print('O candidato Ari é o vencedor da eleição.')
+#         elif canditato02 > canditato01 and canditato03:
+#             print('O candidato Chico é o vencedor da eleição.')
+#         else:
+#             print('O candidato Maria é o vencedor da eleição.')
+        
+#         break
+    
+#     elif opcao == '1':
+#         canditato01 += 1
+#         votos1 += 1
+#         votacao['Ari'] = votos1
+        
+#     elif opcao == '2':
+#         canditato02 += 1
+#         votos2 += 1
+#         votacao['Chico'] = votos2
+        
+#     elif opcao == '3':
+#         canditato03 += 1
+#         votos3 += 1
+#         votacao['Maria'] = votos3
+
+#EXEMPLO 02-------------
+# votos = {
+#     1: 0,  # Candidato 1
+#     2: 0,  # Candidato 2
+#     3: 0   # Candidato 3
+# }
+
+# print("Sistema de Votação\n")
+# print("Digite o número do candidato:")
+# print("1 - Candidato A")
+# print("2 - Candidato B")
+# print("3 - Candidato C")
+# print("0 - Encerrar votação")
+
+# while True:
+#     voto = input("Seu voto: ")
+    
+#     if voto == '0':
+#         break
+#     elif voto in ['1', '2', '3']:
+#         votos[int(voto)] += 1
+#     else:
+#         print("Opção inválida. Tente novamente.")
+
+# # Exibindo resultados
+# print("\nRESULTADOS FINAIS:")
+# print(f"Candidato A: {votos[1]} votos")
+# print(f"Candidato B: {votos[2]} votos")
+# print(f"Candidato C: {votos[3]} votos")
+
+#EXEMPLO 3:
+# votacao = {
+#     'Ari': 0,
+#     'Chico': 0,
+#     'Maria': 0
+# }
+
+# while True:
+#     opcao = input('Escolha entre os candidatos [1] Ari, [2] Chico, [3] Maria, ou [0] para sair: \n')
+
+#     if opcao == '0':
+#         total_votos = sum(votacao.values())
+#         print('\nContagem geral de votos:')
+#         print(f"O candidato Ari teve {votacao['Ari']} votos.")
+#         print(f"O candidato Chico teve {votacao['Chico']} votos.")
+#         print(f"O candidato Maria teve {votacao['Maria']} votos.")
+#         print(f"Quantidade total de votos: {total_votos}")
+#         print(votacao)
+
+#         vencedor = max(votacao, key=votacao.get)#get para acessar o valor e key(parâmetro) 
+#                                                 #para dizer como o max vai agir
+#                     #max é função para descobrir qual teve mais votos
+#         print(f'O candidato {vencedor} é o vencedor da eleição.')
+#         break
+
+#     elif opcao == '1':
+#         votacao['Ari'] += 1
+#     elif opcao == '2':
+#         votacao['Chico'] += 1
+#     elif opcao == '3':
+#         votacao['Maria'] += 1
+#     else:
+#         print("Opção inválida. Tente novamente.")
+#---------------------------------------------------------------------------
+# %% ATIVIDADE PRÁTICA 13:
+# Crie um dicionário que relacione nomes de alunos às suas
+# notas em uma disciplina. Calcule a média das notas eexiba-a.
+    
+# notas = {
+#     'Ari': 8.6,
+#     'Chico': 9.4,
+#     'Maria': 8.5
+# }
+
+# soma = sum(notas.values())
+
+# quantidade = len(notas)
+
+# media = soma / quantidade
+
+# print(f'A média das notas é: {media:.2f}')
+#------------------------------------------------------
+# %% ATIVIDADE PRÁTICA 14:
+# Crie um programa que receba uma lista de números e
+# remova todas as duplicatas usando um conjunto (set). Em
+# seguida, exiba a lista original e a lista sem duplicatas.
+
+# numeros = [
+#     1,2,3,4,4,5,1,6,7,7,8
+# ]
+
+# numeros_att = set(numeros)
+# print(numeros)
+# print(numeros_att)
+#--------------------------------------------------------------
+
+# %% ATIVIDADE PRÁTICA 15:
+# Crie um programa que realize a união de múltiplos
+# conjuntos e exiba o conjunto resultante.
+
+# conjunto = set()
+
+# frutas = {
+#     'Maçã', 'Banana', 'Laranja'
+# }
+
+# legumes = {
+#     'Cenoura', 'Vagem', 'Quiabo'
+# }
+
+# temperos = {
+#     'Sal', 'Cominho', 'Pimenta'
+# }
+
+# conjunto_total = frutas.union(legumes, temperos)
+
+# print(conjunto_total)
+#---------------------------------------------------------------
+
+# %% DESAFIO PRÁTICO 01:
+# Sistema de Cadastro de Alunos - passo 1
+
+# Cadastro de Alunos: O programa deve permitir ao usuário
+# cadastrar alunos. Cada aluno terá as seguintes
+# informações: nome, idade e notas em três disciplinas:
+# Matemática, Ciências e História. Os dados de cada aluno
+# devem ser armazenados em um dicionário com as
+# seguintes chaves:'nome','idade','notas'. As notas devem
+# ser armazenadas em uma tupla.
+
+# alunos = []
+
+# while True:
+#     nome = input('Digite o nome do aluno ou [0] para sair: ')
+#     if nome == '0':
+#         break
+    
+#     idade = int(input('Digite a idade do aluno: '))
+#     matematica = float(input('Digite a nota em matemática: '))
+#     ciencias = float(input('Digite a nota em ciências: '))
+#     historia = float(input('Digite a nota em história: '))
+    
+#     notas = (matematica, ciencias, historia)
+    
+#     dic_alunos = {
+#         'Nome': nome,
+#         'Idade': idade,
+#         'Notas': notas
+#     }
+    
+#     alunos.append(dic_alunos)
+
+# print('\nAlunos cadastrados:')
+# maior_media = -1#menor valor de comparação, já que média começa em 0
+# melhor_aluno = None#classifica o aluno com maior média
+
+# for aluno in alunos:
+#     notas = aluno['Notas']
+#     media = sum(notas) / len(notas)
+#     print(f"O aluno {aluno['Nome']} obteve as notas {notas} e média de {media:.2f}")
+    
+#     if media > maior_media:#se a média for maior que -1
+#         maior_media = media#-1 passa à ter o valor da média atual e maior
+#         melhor_aluno = aluno['Nome']#melhor aluno que era None passa a ser o aluno da lista
+
+# print(f'\nAluno com a maior média: {melhor_aluno} ({maior_media:.2f})')
+    
+#Sistema de Cadastro de Alunos - passo 2
+
+# Visualização de Alunos: O programa deve permitir ao usuário
+# visualizar todos os alunos cadastrados, exibindo suas informações
+# de forma organizada.
+# Média de Notas: O programa deve calcular a média das
+# notas de cada aluno e exibi-la.
+# Aluno com Melhor Média: O programa deve identificar e
+# exibir o aluno com a melhor média de notas.
+#---------------------------------------------------------------
+
+# %% EXERCÍCIO CRIADO 01:
+# Questão 1: Criação de Dicionário
+# Crie um dicionário chamado aluno com as chaves 'nome', 'idade' e 'curso'. 
+# Atribua valores a essas chaves que representem um aluno fictício.
+
+# aluno = {
+#     'Nome': 'Ari',
+#     'Idade': 37,
+#     'Curso': 'Python'
+# }
+# print(aluno)
+
+
+
+#Questão 2: Acesso a Valores
+# Acesse e imprima o valor associado à chave 'curso' do dicionário aluno que você criou.
+# print(aluno['Curso'])
+# for i in aluno:
+#     print(i)
+
+# #Questão 3: Adição de Chave-Valor
+# # Adicione uma nova chave 'cidade' ao dicionário aluno e atribua o valor 'Recife' a ela.
+
+# aluno['Cidade'] = 'Recife'
+# print(aluno)
+# aluno['Cidade'] = 'Olinda'
+# print(aluno)
+

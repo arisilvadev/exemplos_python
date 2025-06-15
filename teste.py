@@ -1,30 +1,53 @@
 
-# Solicite dois números e a operação desejada (+, -, *, /) e realize o cálculo.
-import os
-titulu = 'Calculadora 1.0'
+def soma(a,b):
+    return a+b 
 
-while True:
-    print(f'{titulu:=^40}')
-    numero_1 = int(input('Digite o primeiro número para operação ou 0 para sair: '))
-    if numero_1 == 0:
-        print('Fechando a calculadora!')
-        break
-    numero_2 = int(input('Digite o segundo número para operação: '))
-    operacao = input('Digite qual operação deseja fazer: [+], [-], [*], [/]: ')
-    if operacao != '+-*/':
-        print('Digite um operador válido!')
-        continue
+def subtração(a,b):
+    return a-b 
 
+def multiplicação(a,b):
+    return a*b
+
+def divisão(a,b):
+    if b == 0:
+        return 'Erro! Divisão não pode ser por 0!'
+    return a/b
     
-    if operacao == '+':
-        print(f'O resultado de {numero_1} + {numero_2} é: {numero_1 + numero_2}')
-    elif operacao == '-':
-        print(f'O resultado de {numero_1} - {numero_2} é: {numero_1 - numero_2}')
-    elif operacao == '*':
-        print(f'O resultado de {numero_1} x {numero_2} é: {numero_1 * numero_2}')
+def menu():
+    print('\n==Calculadora 2.0==')
+    print('[1] Soma.')
+    print('[2] Subtração.')
+    print('[3] Multiplicação.')
+    print('[4] Divisão.')
+    print('[5] Sair.')
+    
+while True:
+    menu()
+    opcao = input('Escolha uma operação: ')
+    
+    if opcao == 5:
+        print('Fechando calculadora!')
+        break
+    elif opcao in ['1','2','3','4']:
+        try:
+            num1 = float(input('Digite o primeiro número: '))
+            num2 = float(input('Digite o segundo número: '))
+        except ValueError:
+            print('Erro! Digite apenas números!')
+            continue
+        if opcao == '1':
+            print(f'Resultado = {soma(num1, num2)}')
+        elif opcao == '2':
+            print(f'Resultado = {subtração(num1, num2)}')
+        elif opcao == '3':
+            print(f'Resultado = {multiplicação(num1, num2)}')
+        elif opcao == '4':
+            print(f'Resultado = {divisão(num1, num2)}')
     else:
-        print(f'O resultado de {numero_1} / {numero_2} é: {numero_1 / numero_2:.0f}')
-    input('Digite ENTER para continuar!')
-    os.system('cls')
+        print('Erro! Digite um número entre 1 e 5!')
+    
+    
+    
+        
 
 
